@@ -1,8 +1,16 @@
 language: python
+env:
+ - PYTHONPATH=`pwd`
 python:
- - "3.6"
- - "nightly"
-install
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.6-dev" # 3.6 development branch
+  - "3.7-dev" # 3.7 development branch
+  - "nightly" # currently points to 3.7-dev
+# command to install dependencies
+install:
  - "pip install pytest"
  - "pip install -r rest_api_part3/requirements.txt"
+# command to run tests
 script: python -m pytest rest_api_part3/tests/
